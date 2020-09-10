@@ -2,6 +2,7 @@ resource "aws_subnet" "subnet_privada" {
   vpc_id            = aws_vpc.main.id
   cidr_block        = var.subnetPrivada
   availability_zone = var.availabilityZone
+  map_public_ip_on_launch = false
 
   tags = {
     Name = "Subnet_Desafio_Privada"
