@@ -1,12 +1,8 @@
 resource "aws_lb" "lb" {
   name = var.name
- # availability_zones        = ["us-east-1a"]
   load_balancer_type        = "application"
   subnets                   = [aws_subnet.subnet_publica.id, aws_subnet.secondary.id]
   security_groups           = [ "${aws_security_group.sg_lb.id}" ]
-#  cross_zone_load_balancing = true
-# instances = ["${aws_instance.app[*].id}"]
-# instances = aws_instance.app[*].id
 }
 
 resource "aws_lb_target_group" "lb_target_group" {

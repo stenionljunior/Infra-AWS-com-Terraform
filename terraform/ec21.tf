@@ -17,9 +17,7 @@ resource "aws_instance" "app1" {
     connection {
        type        = "ssh"
         user        = "ubuntu"
-        #private_key = "desafio.pem"
         private_key  = "${file("desafio.pem")}"
-        #host     = aws_instance.app.private_ip
         host        = aws_instance.app1.public_ip
         timeout     = "30s"
       }
