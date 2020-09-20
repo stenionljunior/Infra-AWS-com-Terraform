@@ -84,6 +84,3 @@ variable "mapPublicIP" {
     default = true
 }
 
-variable "testeGitBranche" {
-    default = "Teste branch git"
-}
